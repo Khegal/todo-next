@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 63, "column": 0}, "map": {"version":3,"sources":["file:///Users/24HP7431/Desktop/Code/fullstack-todo/src/app/api/todo/route.ts"],"sourcesContent":["import { Todo } from \"@/types/todo\";\nimport { nanoid } from \"nanoid\";\nimport { NextRequest, NextResponse } from \"next/server\";\n\nexport const todos: Todo[] = [{ id: nanoid(), title: \"Sereerei zaluusai\", checked: true }];\n\nexport const GET = () => {\n  return NextResponse.json(todos);\n};\n\nexport const POST = async (req: NextRequest) => {\n  const { title } = await req.json();\n  const newTodo = { id: nanoid(), title: title, checked: false };\n  todos.push(newTodo);\n  return NextResponse.json(newTodo);\n};\n"],"names":[],"mappings":";;;;;AAEA;AADA;;;AAGO,MAAM,QAAgB;IAAC;QAAE,IAAI,CAAA,GAAA,iJAAA,CAAA,SAAM,AAAD;QAAK,OAAO;QAAqB,SAAS;IAAK;CAAE;AAEnF,MAAM,MAAM;IACjB,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;AAC3B;AAEO,MAAM,OAAO,OAAO;IACzB,MAAM,EAAE,KAAK,EAAE,GAAG,MAAM,IAAI,IAAI;IAChC,MAAM,UAAU;QAAE,IAAI,CAAA,GAAA,iJAAA,CAAA,SAAM,AAAD;QAAK,OAAO;QAAO,SAAS;IAAM;IAC7D,MAAM,IAAI,CAAC;IACX,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;AAC3B"}},
+    {"offset": {"line": 92, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
